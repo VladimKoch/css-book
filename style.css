@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #dfdddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-image: url('list2.jpg');
+    border-radius: 10px;
+    cursor:pointer;
+    box-shadow: 10px 0 20px rgba(0,0,0,0.4),
+    inset 300px 0 50px rgba(0,0,0,0.4);
+    transform: perspective(2000px) rotateZ(0);
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    
+}
+
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background-image: url('kniha.jpg');
+    background-size: 100%;
+    border-radius: 10px;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.cover img{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.cover img:nth-child(2){
+    transform: rotateY(180deg);
+    background-image: url('kniha.jpg');
+}
+
+.card:hover{
+    transform: perspective(2000px) rotateZ(-10deg);
+    box-shadow: 10px 0 20px rgba(0,0,0,0.4),
+    inset 20px 0 50px rgba(0,0,0,0.4);
+}
+
+
+.card:hover .cover{
+    transform: rotateY(-135deg);
+    
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+
+.content h1{
+   
+    font-size: 50px;
+}
+
